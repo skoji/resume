@@ -114,6 +114,7 @@
 	  dt {
           padding-left: 0.5em;
           grid-column: 1;
+          font-weight: bold;
 	  }
 	  dd {
           grid-column: 2;
@@ -122,6 +123,9 @@
 	  @media screen and (max-width: 760px) {
           dl {
               display: block;
+          }
+          dt {
+              padding-left: 0;
           }
 		  dd {
               margin-top: 0;
@@ -135,15 +139,27 @@
 		  }
 	  }
 
-      /* address */
-      address ul {
-          list-style-type: none;
-          padding-left: 0;
+      /* profile */
+      .profile {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
       }
-      address ul li {
+      .profile .name {
+          font-weight: bold;
+      }
+      .profile ul {
+          list-style-type: none;
+      }
+      .profile ul li {
           list-style: none;
       }
-      
+      .profile .address, .profile .links {
+          padding-left: 0;
+      }
+      @media screen and (max-width: 760px) {
+          .profile { display: block; }
+          .profile .links { padding-left: 1em; }
+      }
       /* exp */
       .exp {
           margin-left: 0;
@@ -163,18 +179,39 @@
           display: inline;
           grid-column: 2;          
       }
-	  .position { font-weight: bold; }
 	  .org { font-weight: bold; }
+
+      @media screen and (max-width: 760px) {
+          .exp > li {
+              display: block;
+          }
+          .exp .period {
+              display: block;
+              padding-left: 0;
+          }
+          .exp .org {
+              padding-left: 0;
+          }
+          .exp > li div, .exp > li > ul {
+              display: block;
+              padding-left: 2em;
+          }
+      }
       
 	</style>
 </head>
 <body>
-	<address>
-      <ul>
-	    <li>小嶋智/Satoshi Kojima: <a href="mail:skoji@skoji.jp">skoji@skoji.jp</a> / <a href="https://github.com/skoji">https://github.com/skoji</a>
+	<section class="profile">
+      <ul class="address">
+	    <li class="name">小嶋智/Satoshi Kojima:
 	    <li>Software Developer at Tokyo
       </ul>
-	</address>
+      <ul class="links">
+        <li> Web: <a href="https://skoji.jp">skoji.jp</a>
+        <li> mail: <a href="mail:skoji@skoji.jp">skoji@skoji.jp</a> 
+        <li> GitHub: <a href="https://github.com/skoji">https://github.com/skoji</a>
+      </ul>
+    </section>
 
     <h1>経歴概要</h1>
     <ul class="exp">
@@ -189,6 +226,8 @@
         <div class="org">トリムマーク（旧称Vivliostyle）</div><div>ソフトウェアエンジニア。CSS組版関連のソフトウェア開発を担当。</div>
       <li><div class="period">2018 - 2019</div>
         <div class="org">ボイジャー</div><div>ソフトウェアエンジニア。電子書籍リーダ関連のソフトウェア開発を担当。</div>
+      <li><div class="period">2005 - 現在</div>        
+        <div>WordPress/Movable Type/Middleman/JekyllなどでのWebサイト構築。</div>        
       <li><div class="period">2010 - 現在</div>
         <div>オープンソースでEPUB処理ライブラリなどを開発。</div>
     </ul>
@@ -256,9 +295,13 @@
         <div>インディ電子書籍の製作・発行。<a href="http://kanakanabooks.com/category/books">『電子雑誌トルタル』</a>への参加、<a href="https://asagaya-densho.org">アサガヤデンショ</a>の主宰など。</div>
       <li>
         <div class="period">2017 - 現在</div>
-        <div>SNS「Mastodon」のインスタンス運営。自分専用のほか、<a href="https://bookwor.ms">本好き向けのインスタンス</a>を運営。</div>
+        <div>SNS「Mastodon」のインスタンス運営。<a href="https://sandbox.skoji.jp">自分専用</a>のほか、<a href="https://bookwor.ms">本好き向けのインスタンス</a>を運営。</div>
+      <li>
+        <div class="period">2005 - 現在</div>
+        <div>WordPress/Movable Type/Middleman/JekyllなどによるWebサイト構築。</div>
     </ul>
 
 </body>
 </html>
 
+ 
